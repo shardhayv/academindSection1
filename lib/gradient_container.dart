@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hello/dice_roller.dart';
 
 const topAlignment = Alignment.topLeft;
 const bottomAlignment = Alignment.bottomRight;
 
-void rollDice() {
-  //todo
-}
-
+// ignore: must_be_immutable
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key, required this.colors});
 
@@ -22,24 +20,8 @@ class GradientContainer extends StatelessWidget {
           end: bottomAlignment,
         ),
       ),
-      child: Center(
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/dice-2.png',
-              width: 200,
-            ),
-            const ElevatedButton(
-              onPressed: rollDice,
-              child: Text(
-                'Hello',
-                style: TextStyle(
-                  color: Colors.green,
-                ),
-              ),
-            ),
-          ],
-        ),
+      child: const Center(
+        child: DiceRoller(),
       ),
     );
   }
